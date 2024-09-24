@@ -6,20 +6,20 @@ public class City {
 	
 	private static int instancesCount = 0;
 	
-	private static final String unknownDefaultName = "<unknown>";
-	private static  final String unknownDefaultCountryName = "<unknownCountry>";
-	private static final int unknownPopulationDefaultSize = 0;
+	private static final String UNKNOWN_DEFAULT_NAME = "<unknown>";
+	private static  final String UNKNOWN_DEFAULT_COUNTRY_NAME = "<unknownCountry>";
+	private static final int UNKNOWN_DEFAULT_POPULATION_SIZE = 0;
 	
 	public City() {
-		this(unknownDefaultName, unknownDefaultCountryName, unknownPopulationDefaultSize);
+		this(UNKNOWN_DEFAULT_NAME, UNKNOWN_DEFAULT_COUNTRY_NAME, UNKNOWN_DEFAULT_POPULATION_SIZE);
 	}
 	
 	public City(String name, String country) {
-		this(name, country, unknownPopulationDefaultSize);
+		this(name, country, UNKNOWN_DEFAULT_POPULATION_SIZE);
 	}
 	
 	public City(String name, int populationSize) {
-		this(name, unknownDefaultCountryName, populationSize);
+		this(name, UNKNOWN_DEFAULT_COUNTRY_NAME, populationSize);
 	}
 	
 	public City(String name, String country, int populationSize) {
@@ -61,7 +61,7 @@ public class City {
 	}
 	
 	public String toString() {
-		return "The city of " + this.getName() + ", located in " + this.getCountry() + " has a population size of " + this.getPopulationSize() + " people.";
+		return this != null ? "City [name = " + this.getName() + "][country = " + this.getCountry() + "][populationSize = " + this.getPopulationSize() + "]" : "null";
 	}
 	
 	// Displays info about a specific city.

@@ -4,31 +4,29 @@ public class City {
 	private String country;
 	private int populationSize;
 	
-	private final String unknownDefaultName = "Saint-Anonyme-sur-Masque";
-	private final String unknownDefaultCountryName = "NordVPN";
-	private final int unknownPopulationDefaultSize = 0;
+	private static int instancesCount = 0;
+	
+	private static final String unknownDefaultName = "<unknown>";
+	private static  final String unknownDefaultCountryName = "<unknownCountry>";
+	private static final int unknownPopulationDefaultSize = 0;
 	
 	public City() {
-		this.setName(unknownDefaultName);
-		this.setCountry(unknownDefaultCountryName);
-		this.setPopulationSize(unknownPopulationDefaultSize);
+		this(unknownDefaultName, unknownDefaultCountryName, unknownPopulationDefaultSize);
 	}
 	
 	public City(String name, String country) {
-		this.setName(name);
-		this.setCountry(country);
-		this.setPopulationSize(unknownPopulationDefaultSize);
+		this(name, country, unknownPopulationDefaultSize);
+	}
+	
+	public City(String name, int populationSize) {
+		this(name, unknownDefaultCountryName, populationSize);
 	}
 	
 	public City(String name, String country, int populationSize) {
 		this.setName(name);
 		this.setCountry(country);
 		this.setPopulationSize(populationSize);
-	}
-	
-	// Displays info about a specific city.
-	public void display() {
-		System.out.println(this.getName() + ", " + this.getCountry() + " — " + this.getPopulationSize() + " habitants");
+		instancesCount++;
 	}
 
 	// Accessors
@@ -60,5 +58,26 @@ public class City {
 
 	public void addToPopulationSize(int populationIncrement) {
 		this.setPopulationSize(this.getPopulationSize() + populationIncrement);
+	}
+	
+	public String toString() {
+		return "The city of " + this.getName() + ", located in " + this.getCountry() + " has a population size of " + this.getPopulationSize() + " people.";
+	}
+	
+	// Displays info about a specific city.
+	public void display() {
+		System.out.println(this);
+	}
+	
+	public static int count() {
+		return getInstancesCount();
+	}
+
+	public static int getInstancesCount() {
+		return instancesCount;
+	}
+
+	public void setInstancesCount(int instancesCount) {
+		this.instancesCount = instancesCount;
 	}
 }

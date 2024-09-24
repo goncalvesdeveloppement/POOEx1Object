@@ -2,7 +2,7 @@ import java.util.Iterator;
 
 public class TestCity {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		City toulouse = new City("Toulouse", "France");
 		City bayonne = new City("Bayonne", "France", 25000);
 		City biarritz = new City("Biarritz", "France", 18500);
@@ -37,5 +37,13 @@ public class TestCity {
 		
 		toulouse.addToPopulationSize(10000);
 		toulouse.display();
+				
+		City rabat = new City("Rabat", 577000);
+		rabat.display();
+		
+		rabat.setCountry("Maroc");
+		rabat.display();
+		
+		System.out.println(City.count());
 	}
 }

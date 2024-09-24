@@ -7,7 +7,7 @@ public class City {
 	private static int instancesCount = 0;
 	
 	private static final String UNKNOWN_DEFAULT_NAME = "<unknown>";
-	private static  final String UNKNOWN_DEFAULT_COUNTRY_NAME = "<unknownCountry>";
+	private static final String UNKNOWN_DEFAULT_COUNTRY_NAME = "<unknownCountry>";
 	private static final int UNKNOWN_DEFAULT_POPULATION_SIZE = 0;
 	
 	public City() {

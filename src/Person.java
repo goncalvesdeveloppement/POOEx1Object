@@ -7,11 +7,11 @@ public class Person {
 	private String address;
 	private City birthCity;
 
-	static final String UNKNOWN_LASTNAME = "<unknown last name>";
-	static final String UNKNOWN_FIRSTNAME = "<unknown first name>";
-	static final int MINIMUM_AGE = 0;
-	static final String UNKNOWN_ADDRESS = "<unknown address>";
-	static final City UNKNOWN_CITY = new City();
+	private static final String UNKNOWN_LASTNAME = "<unknown last name>";
+	private static final String UNKNOWN_FIRSTNAME = "<unknown first name>";
+	private static final int MINIMUM_AGE = 0;
+	private static final String UNKNOWN_ADDRESS = "<unknown address>";
+	private static final City UNKNOWN_CITY = new City();
 
 	public Person() {
 		this(UNKNOWN_LASTNAME);

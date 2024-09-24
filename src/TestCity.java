@@ -12,16 +12,30 @@ public class TestCity {
 		City ls = new City("Los Santos", "USA", 2147483647);
 		City xxx = new City();
 
-		toulouse.Display();
-		bayonne.Display();
-		biarritz.Display();
-		dax.Display();
-		tarbes.Display();
-		xxx.Display();
-		cupertino.Display();
-		ls.Display();
+		toulouse.display();
+		bayonne.display();
+		biarritz.display();
+		dax.display();
+		tarbes.display();
+		xxx.display();
+		cupertino.display();
+		ls.display();
+
+		// toulouse.setPopulationSize(-20000); // erreur
+		dax.setPopulationSize(40100);
+		dax.display();
 		
-		toulouse.populationSize += 20000;
-		toulouse.Display();
+		// tarbes.addToPopulationSize(-2); // erreur
+		tarbes.addToPopulationSize(-1);
+		tarbes.display();
+		
+		biarritz.addToPopulationSize(10000);
+		biarritz.display();
+		
+		biarritz.setPopulationSize(biarritz.getPopulationSize() - 10000);
+		biarritz.display();
+		
+		toulouse.addToPopulationSize(10000);
+		toulouse.display();
 	}
 }

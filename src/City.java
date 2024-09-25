@@ -61,7 +61,7 @@ public class City {
 	}
 	
 	public String toString() {
-		return this != null ? "City [name = " + this.getName() + "][country = " + this.getCountry() + "][populationSize = " + this.getPopulationSize() + "]" : "null";
+		return this != null ? "City [name = " + this.getName() + "][country = " + this.getCountry() + "]" + (populationSize > 0 ? "[populationSize = " + this.getPopulationSize() + "]" : "") : "null";
 	}
 	
 	// Displays info about a specific city.
